@@ -1,9 +1,12 @@
 import * as React from 'react';
+
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
 import Home from '../Screens/Home';
 import AboutUs from '../Screens/AboutUs';
 import Contact from '../Screens/Contact';
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import ImageViewer from '../components/Image/ImageViewer';
 
 const Stack = createNativeStackNavigator();
 
@@ -17,6 +20,9 @@ export default function Navigation() {
           component={Home}
           options={{ 
             title: 'Inicio',
+            headerTitle: (props) => <ImageViewer
+            imageSource={{ uri: "https://picsum.photos/201" }}
+           />,
             headerStyle: {
               backgroundColor: '#000',
             },

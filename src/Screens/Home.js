@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { StatusBar } from "expo-status-bar";
 import { Text, View } from 'react-native';
 import ComponentButton from '../components/ComponentButton';
 import { stylesScreen } from './ScreenStyle';
@@ -19,6 +20,7 @@ export default function Home({navigation}) {
                 navigation.navigate('Contact');
             }}
         />
+        <StatusBar style="auto" />
     </View>
   );
 }
