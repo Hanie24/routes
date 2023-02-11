@@ -4,7 +4,7 @@ import { Text, View } from 'react-native';
 import { stylesScreen } from './ScreenStyle';
 import ComponentButton from '../components/ComponentButton';
 
-export default function AboutUs({navigation}) {
+export default function UserDetails({navigation}) {
   return (
     <View style={stylesScreen.container}>
       <Text>About Us!</Text>

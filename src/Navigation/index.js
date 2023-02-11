@@ -3,9 +3,9 @@ import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-import Home from '../Screens/Home';
-import AboutUs from '../Screens/AboutUs';
-import Contact from '../Screens/Contact';
+import UserList from '../Screens/UserList';
+import UserDetails from '../Screens/UserDetails';
+import CreateUser from '../Screens/CreateUser';
 import ImageViewer from '../components/Image/ImageViewer';
 
 const Stack = createNativeStackNavigator();
@@ -14,29 +14,26 @@ const Stack = createNativeStackNavigator();
 export default function Navigation() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName='Home'>
+      <Stack.Navigator initialRouteName='UserList'>
         <Stack.Screen 
-          name="Home" 
-          component={Home}
+          name="UserList" 
+          component={UserList}
           options={{ 
-            title: 'Inicio',
-            headerTitle: (props) => <ImageViewer
-            imageSource={{ uri: "https://picsum.photos/201" }}
-           />,
+            title: 'Lista de Usuarios',
             headerStyle: {
               backgroundColor: '#000',
             },
             headerTintColor: '#fff',
-          }} 
+          }}
           />
         <Stack.Screen 
-          name="Contact" 
-          component={Contact} 
-          options={{ title: 'Contacto' }}/>
+          name="CreateUser" 
+          component={CreateUser} 
+          options={{ title: 'Crear Usuario' }}/>
         <Stack.Screen 
-          name="AboutUs" 
-          component={AboutUs}
-          options={{ title: 'Acerca de...' }} />
+          name="UserDetails" 
+          component={UserDetails}
+          options={{ title: 'Detalle de usuario' }} />
       </Stack.Navigator>
     </NavigationContainer>
   );
